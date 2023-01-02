@@ -1,0 +1,14 @@
+# What is Emmet?
+
+Emmet is a plugin for many popular text editors which greatly improves HTML & CSS workflow.
+It is used for high speed coding. Emmet expands abbreviations.
+One of the functions of Emmet is Tag Balancing.
+
+# Difference between a Library and Framework?
+
+A Library is essentially a set of functions that you can call, these days usually organized into classes. 
+Each call does some work ans returns control to the client.
+
+A framework embodies some abstract design, with more behaviour built in. 
+In order to use it, you need to insert your behaviour into various places in the framework either 
+by subclassing or by plugging in your own classes. The framework's code then calls your code at these points.

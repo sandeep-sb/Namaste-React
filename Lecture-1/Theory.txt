@@ -12,3 +12,7 @@ Each call does some work ans returns control to the client.
 A framework embodies some abstract design, with more behaviour built in. 
 In order to use it, you need to insert your behaviour into various places in the framework either 
 by subclassing or by plugging in your own classes. The framework's code then calls your code at these points.
+
+
+#CDN
+#CrossOrigin

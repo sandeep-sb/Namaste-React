@@ -1,0 +1,23 @@
+{
+  "name": "namaste-react",
+  "version": "1.0.0",
+  "description": "This is Namaste React.",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sandeep-sb/Namaste-React.git"
+  },
+  "keywords": [],
+  "author": "Sandeep Singh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sandeep-sb/Namaste-React/issues"
+  },
+  "homepage": "https://github.com/sandeep-sb/Namaste-React#readme",
+  "devDependencies": {
+    "parcel": "^2.8.3"
+  }
+}

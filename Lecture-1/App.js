@@ -1,12 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-// react element
-const heading = <h1 id="heading">Namaste React with JSX🚀</h1>;
+const TitleComponent = () => <h1 id="heading">Namaste React with JSX🚀</h1>;
 
-// react component 
 const HeadingComponent = () => {
-    return <h1>Namaste react Heading Component</h1>;
+    return <div>
+        <TitleComponent />
+        <h1>Namaste react Heading Component</h1>
+    </div>;
 }
 
 

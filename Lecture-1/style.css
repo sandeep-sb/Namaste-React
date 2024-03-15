@@ -68,3 +68,77 @@
 .search-btn{
   margin-left: 10px;
 }
+
+.menu{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.restaurant-image{
+  width: 200px;
+  height: 200px;
+  margin-top: 20px;
+  background-color: gray;
+}
+
+.restaurant-details{
+  display: flex;
+  flex-wrap: wrap;
+  background-color: gray;
+}
+
+.res-name{
+  font-size: larger;
+  font-weight: 300;
+}
+
+.menu-card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu-card h1{
+  text-align: left;
+}
+
+.menu-item-container{
+  display: flex;
+  padding: 10px;
+  border-bottom: 1px solid gray;
+  margin-bottom: 20px;
+  width: 50%;
+}
+
+.menu-item-name-price-description{
+  padding: 10px
+}
+
+.veg-nonveg, .item-name, .item-price{
+  margin: 0;
+}
+
+.menu-item-image{
+  width: 100px;
+  height: 100px;
+}
+
+.hidden{
+  display: none;
+}
+
+.veg-or-nonveg{
+  margin-top: 40px;
+  border-bottom: 1px solid gray;
+  width: 50%;
+  padding: 15px 0;
+  font-size:x-large;
+}
+
+.add-btn{
+  position: relative;
+  padding: 5px 20px;
+  left: 15%;
+  bottom: 15px;
+}

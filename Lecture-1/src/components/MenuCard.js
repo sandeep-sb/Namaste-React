@@ -16,10 +16,9 @@ const Menu = ({resId}) => {
         const json = await menuData.json();
         console.log(json.data.cards[2]);
         const menu = json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.
-            filter(x => x?.card?.card?.["@type"] === 
-            "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
-        console.log(menu);
-        setMenuList(menu);
+            filter(x => x?.card?.card?.["title"] ===  "Recommended");
+            console.log(menu);
+            setMenuList(menu);
     }
 
     if(menuList === null)   return <Shimmer />
@@ -27,12 +26,12 @@ const Menu = ({resId}) => {
     return (
         <>
         <div className="veg-or-nonveg">
-            <label htmlFor="veg">Veg</label>
+            <label htmlFor="veg">Veg only</label>
             <input id="veg" type="checkbox" value={isVeg} onClick={() => setIsVeg(value => !value)}/>
         </div>
         {menuList?.map((x, index) => 
             <div className="menu-card" key={index}>
-                <h2>{x?.card?.card?.title} ({x?.card?.card?.itemCards.length})</h2>
+                <h2>{x?.card?.card?.title}</h2>
                 {x?.card?.card?.itemCards?.map(item => 
                     <MenuItemCard key={item.card.info.id} menu={item.card.info} filterVeg={isVeg} ></MenuItemCard>
                 )}

@@ -3,6 +3,10 @@ import Shimmer from "./Shimmer";
 import { CDN_URL } from "../utils/constants";
 import Menu from "./MenuCard";
 import { useParams } from "react-router-dom";
+import { FaMotorcycle } from "react-icons/fa";
+import { HiOutlineCurrencyRupee } from "react-icons/hi";
+import { MdAccessTimeFilled } from "react-icons/md";
+import { FaStar } from "react-icons/fa6";
 
 const RestaurantMenu = () => {
     const [resInfo, setResInfo] = useState(null);
@@ -21,24 +25,42 @@ const RestaurantMenu = () => {
 
     return resInfo === null ? <Shimmer /> :(
         <div className="menu">
-            <img
+            {/* <img
                 className="restaurant-image"
                 src={CDN_URL + resInfo.cloudinaryImageId}
-            />
+            /> */}
             <div className="restaurant-details">
-                <p className="res-name">{resInfo.name}</p>
-                <ul>
-                    {resInfo.cuisines.map((dishName, index) => 
-                        <li key={index}>{dishName}</li>
-                        )}
-                </ul>
-                <h2>{resInfo.aggregatedDiscountInfoV3.header} | {resInfo.aggregatedDiscountInfoV3.subHeader}</h2>
-                <h2>{resInfo.areaName}</h2>
-                <h2>Ratings: {resInfo.avgRating}</h2>
-                <h2>isOpen: {resInfo.isOpen ? "true" : "false"}</h2>
-                <h2>{resInfo.costForTwo}</h2>
-                <h2>Delivery Time: {resInfo.sla.slaString}</h2>
-                <h2>Total Ratings: {resInfo.totalRatingsString}</h2>
+                <div>
+                    <h2 className="res-name">{resInfo.name}</h2>
+
+                    <div className="dish-type">
+                        <p className="dish-item">{resInfo.cuisines[0]},</p>
+                        <p className="dish-item"> {resInfo.cuisines[1]}</p>
+                    </div>
+
+                    <p className="res-area">{resInfo.areaName}</p>
+                    
+                    <p>
+                        <FaMotorcycle/>
+                        {resInfo.sla.lastMileTravel} kms
+                    </p>
+                    
+                </div>
+                <div className="res-rating">
+                    <p><FaStar /> {resInfo.avgRating}</p>
+                    <p>{resInfo.totalRatingsString} ratings</p>
+
+                </div>
+                
+                {/* <p>isOpen: {resInfo.isOpen ? "true" : "false"}</p>
+                    <p>{resInfo.aggregatedDiscountInfoV3.header} | {resInfo.aggregatedDiscountInfoV3.subHeader}</p>
+                 */}
+            </div>
+            <div className="delivery-details">
+                
+                <p><MdAccessTimeFilled className="delivery-icon"/>{resInfo.sla.slaString}</p>
+                
+                <p><HiOutlineCurrencyRupee className="delivery-icon"/>{resInfo.costForTwo}</p>
             </div>
             <Menu resId={resId} />
         </div>

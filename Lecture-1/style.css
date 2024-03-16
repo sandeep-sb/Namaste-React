@@ -1,3 +1,7 @@
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -85,12 +89,62 @@
 .restaurant-details{
   display: flex;
   flex-wrap: wrap;
-  background-color: gray;
+  /* background-color: rgb(238, 238, 238); */
+  width: 50%;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid rgb(212, 212, 212);
 }
 
-.res-name{
+.res-rating{
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid rgb(212, 212, 212);
+  border-radius: 10px;
+  height: 50%
+}
+
+.res-rating p{
+  margin: 0px;
+  padding: 5px 0;
+}
+
+.res-rating p:nth-child(1){
+  text-align: center;
+}
+
+.res-rating p:nth-child(1){
+  border-bottom: 1px solid rgb(212, 212, 212);
+}
+
+.delivery-details{
+  display: flex;
+  width: 50%;
+  /* padding: 10px 0; */
+
+}
+
+.delivery-icon{
+  align-self: center;
+}
+
+.delivery-details p{
+  padding: 0 10px;
+  font-weight: bolder;
   font-size: larger;
-  font-weight: 300;
+}
+
+.dish-type{
+  display: flex;
+}
+
+.dish-item{
+  margin: 0;
+  margin-right: 5px;
+}
+
+.res-area{
+  margin: 0;
 }
 
 .menu-card{
@@ -106,13 +160,15 @@
 .menu-item-container{
   display: flex;
   padding: 10px;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid rgb(212, 212, 212);
   margin-bottom: 20px;
   width: 50%;
+  min-width: 50%  ;
 }
 
 .menu-item-name-price-description{
-  padding: 10px
+  padding: 10px;
+  width: 80%;
 }
 
 .veg-nonveg, .item-name, .item-price{
@@ -120,6 +176,10 @@
 }
 
 .menu-item-image{
+  width: 20%;
+}
+
+.item-image{
   width: 100px;
   height: 100px;
 }
@@ -129,10 +189,11 @@
 }
 
 .veg-or-nonveg{
-  margin-top: 40px;
-  border-bottom: 1px solid gray;
+  /* margin-top: 40px; */
+  border-bottom: 1px solid rgb(212, 212, 212);
+  /* border-top: 1px solid rgb(212, 212, 212); */
   width: 50%;
-  padding: 15px 0;
+  padding: 15px 10px;
   font-size:x-large;
 }
 

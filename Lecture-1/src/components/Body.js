@@ -78,9 +78,10 @@ const Body = () => {
       <div className="res-card-container">
         {filteredRestaurant.map((restaurant) => (
           <div
+            key={restaurant.info.id}
             onClick={() => navigate(`/restaurants/${restaurant.info.id}`)}
           >
-            <RestaurantCard key={restaurant.info.id} resData={restaurant} />
+            <RestaurantCard resData={restaurant} />
           </div>
         ))}
       </div>

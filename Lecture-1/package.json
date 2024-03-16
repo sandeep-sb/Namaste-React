@@ -20,11 +20,14 @@
   "homepage": "https://github.com/sandeep-sb/Namaste-React#readme",
   "devDependencies": {
     "parcel": "^2.8.3",
-    "process": "^0.11.10"
+    "postcss": "^8.4.35",
+    "process": "^0.11.10",
+    "tailwindcss": "^3.4.1"
   },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^5.0.1",
     "react-router-dom": "^6.22.3"
   },
   "browserslist": [

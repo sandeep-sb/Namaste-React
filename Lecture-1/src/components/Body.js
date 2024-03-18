@@ -2,22 +2,22 @@ import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { useNavigate } from "react-router-dom";
+import { RESTAURANT_API } from "../utils/constants";
+import useOnlineStatus from "../hooks/useOnlineStatus";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
   const navigate = useNavigate();
+  const onlineStatus = useOnlineStatus();
 
   useEffect(() => {
-    console.log("Use Effect called");
     fetchData();
   }, []);
 
   const fetchData = async () => {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-    );
+    const data = await fetch(RESTAURANT_API);
     const json = await data.json();
     console.log(json);
     setListOfRestaurants(
@@ -29,10 +29,13 @@ const Body = () => {
     );
   };
 
-  // // Conditional Rendering
-  //   if(listOfRestaurants.length === 0){
-  //     return (<Shimmer />);
-  //  }
+  if(onlineStatus === false){
+    return (
+      <div>
+        <h1>Oops! Looks like you are offline. Please check your internet connection!!</h1>
+      </div>
+    );
+  }
 
   return listOfRestaurants.length === 0 ? (
     <Shimmer />
@@ -50,11 +53,9 @@ const Body = () => {
         <button
           className="search-btn"
           onClick={() => {
-            const filteredList = listOfRestaurants.filter(
-              (restaurant) => {
-                return restaurant.info.name.toLowerCase().includes(searchText);
-              }
-            );
+            const filteredList = listOfRestaurants.filter((restaurant) => {
+              return restaurant.info.name.toLowerCase().includes(searchText);
+            });
             setFilteredRestaurant(filteredList);
           }}
         >
